@@ -1,0 +1,27 @@
+<div style="height: 100%;">
+  <div style="height: 75px;">
+    <div style="display: inline;">
+      <img src="../../../assets/images/logo.jpg" style="max-width: 150px;" />
+    </div>
+  </div>
+  <div style="height: calc(100vh - 75px);">
+    <div fxFill fxLayout="row">
+      <div fxFlex style="border: 1px solid lightgrey; padding: 2px">
+        <ul style="list-style-type:none; padding-left: 0;">
+          <li style="margin: 5px;">
+            <a [routerLink]="['/home', {outlets: {'homeOutlet': ['catalogue']}}]">Catalogue</a>
+          </li>
+          <li style="margin: 5px;">
+            <a [routerLink]="['/home', {outlets: {'homeOutlet': ['subscriptions']}}]">My Subscriptions</a>
+          </li>
+        </ul>
+        <div style="bottom: 0; position: absolute; margin: 5px;">
+          <a [routerLink]="" (click)="logout()">Logout</a>
+        </div>
+      </div>
+      <div fxFlex="80" style="border: 1px solid lightgrey; padding: 2px; overflow-y: scroll;">
+        <router-outlet name='homeOutlet'></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
